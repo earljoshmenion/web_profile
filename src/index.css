@@ -8,6 +8,7 @@
   --code-bg: #f4f3ec;
   --accent: #14281d;
   --accent-bg: rgba(20, 40, 29, 0.1);
+  --card-bg: #D9D9D9;
   --accent-border: rgba(20, 40, 29, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
@@ -111,4 +112,8 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+.navbar{
+  background-color: var(--card-bg);
 }
