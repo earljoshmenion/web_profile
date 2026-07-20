@@ -1,8 +1,14 @@
 export default function Home() {
   return (
     <section>
-      <h1>Welcome</h1>
-      <p>This is your home page.</p>
+      <div className="card flex mt-10 ml-auto"></div>
+
+
+
+
+
+
+
     </section>
   );
 }
