@@ -8,7 +8,7 @@ function HoverText({ text }) {
       {text.split("").map((letter, index) => (
         <span
           key={index}
-          className="hovver:text-[#D9D9D9] transition delay-150 duration-200 ease-in-out hover:scale-150 hover:text-white cursor-default"
+          className="hover:text-[#D9D9D9] transition delay-150 duration-200 ease-in-out hover:scale-150  cursor-default"
         >
           {letter === " " ? "\u00A0" : letter}
         </span>
