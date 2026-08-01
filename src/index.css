@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-
-
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -11,6 +9,7 @@
   --accent: #14281d;
   --accent-bg: rgba(20, 40, 29, 0.1);
   --card-bg: #d9d9d9;
+  --card2-bg: #c2a878;
   --text-color: #6e633d;
   --accent-border: rgba(20, 40, 29, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
@@ -132,19 +131,26 @@ code {
 }
 .card {
   width: min(100%, 450px);
-  max-width: 450px;
+  max-width: 300px;
   min-height: 480px;
   background-color: var(--card-bg);
   border-radius: 10px;
   box-sizing: border-box;
 }
+.card2 {
+  width: min(100%, 450px);
+  max-width: 300px;
+  min-height: 480px;
+  background-color: var(--card2-bg);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
 
 @media (max-width: 768px) {
-  .card {
+  .card,
+  .card2 {
     width: 100%;
     max-width: 100%;
     min-height: 240px;
   }
-}
-.button {
 }

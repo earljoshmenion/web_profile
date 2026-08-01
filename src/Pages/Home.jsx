@@ -17,6 +17,10 @@ function HoverText({ text }) {
   );
 }
 
+const paragraphs = [
+  "I build responsive, modern, and user-friendly web applications. I enjoy solving real-world problems through code and continuously expanding my frontend skills.",
+];
+
 export default function Home() {
   return (
     <section>
@@ -29,9 +33,7 @@ export default function Home() {
             HI, I’m Earl
           </p>
           <p className="text-left leading-relaxed max-w-xl text-[#D9D9D9]">
-            I build responsive, modern, and user-friendly web applications. I
-            enjoy solving real-world problems through code and continuously
-            expanding my frontend skills.
+            {paragraphs[0]}
           </p>
           <div className="flex relative gap-4 mt-8">
             <Link
@@ -59,10 +61,15 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="card relative mt-20 ml-auto mb-8 ">
-          <div className="absolute -bottom-6 left-6 bg-white rounded-xl border border-yellow-400 shadow-md px-4 py-2">
-            <p className="">Currently</p>
-            <p className="text-sm">At work</p>{" "}
+        <div className="relative mt-20 ml-auto mb-8 h-120 w-75 sm:w-80">
+          <div className="card2 absolute top-4 left-4 z-0"></div>
+
+          <div className="card absolute  z-10">
+            
+            <div className="absolute -bottom-6 left-6 bg-white rounded-xl border border-yellow-400 shadow-md px-4 py-2">
+              <p>Currently</p>
+              <p className="text-sm">At work</p>
+            </div>
           </div>
         </div>
       </div>
