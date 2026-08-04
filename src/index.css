@@ -58,10 +58,75 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: var(--accent);
+  position: relative;
+  overflow-x: hidden;
+  background-color: #162b1c;
+  background-image: linear-gradient(135deg, #102215 0%, #14281d 35%, #1f3a26 100%);
+  color: var(--text);
+}
+
+/* Soft, fully circular background bubbles. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: -10rem;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+body::before {
+  background-image:
+    radial-gradient(circle at 15% 22%, #355834 0 9rem, transparent 9.2rem),
+    radial-gradient(circle at 70% 16%, #c2a878 0 7rem, transparent 7.2rem),
+    radial-gradient(circle at 80% 75%, #355834 0 10rem, transparent 10.2rem);
+  animation: bubbles-flow-one 16s ease-in-out infinite;
+}
+
+body::after {
+  background-image:
+    radial-gradient(circle at 34% 74%, #c2a878 0 8rem, transparent 8.2rem),
+    radial-gradient(circle at 52% 43%, #355834 0 6rem, transparent 6.2rem),
+    radial-gradient(circle at 92% 42%, #c2a878 0 7rem, transparent 7.2rem);
+  animation: bubbles-flow-two 20s ease-in-out infinite;
+}
+
+@keyframes bubbles-flow-one {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  35% {
+    transform: translate3d(14vw, 8vh, 0) scale(1.08);
+  }
+  70% {
+    transform: translate3d(24vw, -5vh, 0) scale(0.96);
+  }
+}
+
+@keyframes bubbles-flow-two {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  30% {
+    transform: translate3d(-12vw, -8vh, 0) scale(1.06);
+  }
+  65% {
+    transform: translate3d(18vw, 10vh, 0) scale(0.94);
+  }
+}
+
+main.main-layout {
+  min-height: 100vh;
+  padding-top: 1rem;
 }
 
 #root {
+  position: relative;
+  z-index: 1;
   width: min(1126px, 100%);
   max-width: 100%;
   margin: 0 auto;
@@ -129,28 +194,27 @@ code {
   border-radius: 50%;
   background-color: var(--accent);
 }
-.card {
-  width: min(100%, 450px);
+.card,
+.card-layer {
+  width: calc(100% - 16px);
   max-width: 300px;
-  min-height: 480px;
+  height: auto;
+  aspect-ratio: 5 / 8;
   background-color: var(--card-bg);
   border-radius: 10px;
   box-sizing: border-box;
 }
 .card2 {
-  width: min(100%, 450px);
+  width: calc(100% - 16px);
   max-width: 300px;
-  min-height: 480px;
+  height: auto;
+  aspect-ratio: 5 / 8;
   background-color: var(--card2-bg);
   border-radius: 10px;
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  .card,
-  .card2 {
-    width: 100%;
-    max-width: 100%;
-    min-height: 240px;
-  }
+.profile-card-stack {
+  width: min(calc(100% - 1rem), 316px);
+  aspect-ratio: 79 / 124;
 }
